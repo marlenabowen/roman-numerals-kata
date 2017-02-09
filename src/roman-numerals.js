@@ -1,5 +1,4 @@
 export default class RomanNumerals {
-
   static numeral(value, numeral) {
     return { value: value, numeral: numeral };
   }
