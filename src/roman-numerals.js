@@ -1,32 +1,30 @@
+'use strict';
+
 export default class RomanNumerals {
-  static numeral(value, numeral) {
-    return { value: value, numeral: numeral };
-  }
-
   static convert(n) {
-    const numerals = [
-      RomanNumerals.numeral(1, 'I'),
-      RomanNumerals.numeral(4, 'IV'),
-      RomanNumerals.numeral(5, 'V'),
-      RomanNumerals.numeral(9, 'IX'),
-      RomanNumerals.numeral(10, 'X'),
-      RomanNumerals.numeral(40, 'XL'),
-      RomanNumerals.numeral(50, 'L'),
-      RomanNumerals.numeral(90, 'XC'),
-      RomanNumerals.numeral(100, 'C'),
-      RomanNumerals.numeral(400, 'CD'),
-      RomanNumerals.numeral(500, 'D'),
-      RomanNumerals.numeral(900, 'CM'),
-      RomanNumerals.numeral(1000, 'M'),
-    ];
+    let numeral = '';
+    const numerals = {
+      1000:'M',
+      900:'CM',
+      500:'D',
+      400:'CD',
+      100:'C',
+      90:'XC',
+      50:'L',
+      40:'XL',
+      10:'X',
+      9:'IX',
+      5:'V',
+      4:'IV',
+      1:'I',
+    }
 
-    let romanNumeral = '';
-    numerals.forEach((item) => {
-      while (n >= item.value) {
-        romanNumeral += item.numeral;
-        n -= item.value;
+    for (const number in numerals) {
+      while (n >= number) {
+        numeral += numerals[number];
+        n -= number;
       }
-    });
-    return romanNumeral;
+    }
+    return numeral;
   }
 }
