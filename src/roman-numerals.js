@@ -3,28 +3,28 @@
 export default class RomanNumerals {
   static convert(n) {
     let numeral = '';
-    const numerals = {
-      1000:'M',
-      900:'CM',
-      500:'D',
-      400:'CD',
-      100:'C',
-      90:'XC',
-      50:'L',
-      40:'XL',
-      10:'X',
-      9:'IX',
-      5:'V',
-      4:'IV',
-      1:'I',
-    }
+    const numerals = [
+      { num:1000, sym:'M' },
+      { num:900, sym:'CM' },
+      { num:500, sym:'D' },
+      { num:400, sym:'CD' },
+      { num:100, sym:'C' },
+      { num:90, sym:'XC' },
+      { num:50, sym:'L' },
+      { num:40, sym:'XL' },
+      { num:10, sym:'X' },
+      { num:9, sym:'IX' },
+      { num:5, sym:'V' },
+      { num:4, sym:'IV' },
+      { num:1, sym:'I' },
+    ]
 
-    for (const number in numerals) {
-      while (n >= number) {
-        numeral += numerals[number];
-        n -= number;
+    numerals.forEach((pair) => {
+      while (n >= pair.num) {
+        numeral += pair.sym;
+        n -= pair.num;
       }
-    }
+    });
     return numeral;
   }
 }
