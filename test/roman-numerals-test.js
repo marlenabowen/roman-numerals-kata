@@ -30,18 +30,30 @@ describe('<RomanNumerals />', () => {
   context('multiples of 10', () => {
     it('converts correctly', () => {
       expect(RomanNumerals.convert(10)).to.eq('X');
-      expect(RomanNumerals.convert(40)).to.eq('XL');
-      expect(RomanNumerals.convert(50)).to.eq('L');
+      expect(RomanNumerals.convert(13)).to.eq('XIII');
+      expect(RomanNumerals.convert(27)).to.eq('XXVII');
+      expect(RomanNumerals.convert(31)).to.eq('XXXI');
+      expect(RomanNumerals.convert(45)).to.eq('XLV');
+      expect(RomanNumerals.convert(42)).to.eq('XLII');
+      expect(RomanNumerals.convert(54)).to.eq('LIV');
+      expect(RomanNumerals.convert(66)).to.eq('LXVI');
+      expect(RomanNumerals.convert(78)).to.eq('LXXVIII');
+      expect(RomanNumerals.convert(89)).to.eq('LXXXIX');
       expect(RomanNumerals.convert(90)).to.eq('XC');
     });
   });
 
   context('multiples of 100', () => {
     it('converts correctly', () => {
-      expect(RomanNumerals.convert(100)).to.eq('C');
-      expect(RomanNumerals.convert(400)).to.eq('CD');
-      expect(RomanNumerals.convert(500)).to.eq('D');
-      expect(RomanNumerals.convert(900)).to.eq('CM');
+      expect(RomanNumerals.convert(133)).to.eq('CXXXIII');
+      expect(RomanNumerals.convert(264)).to.eq('CCLXIV');
+      expect(RomanNumerals.convert(387)).to.eq('CCCLXXXVII');
+      expect(RomanNumerals.convert(492)).to.eq('CDXCII');
+      expect(RomanNumerals.convert(575)).to.eq('DLXXV');
+      expect(RomanNumerals.convert(666)).to.eq('DCLXVI');
+      expect(RomanNumerals.convert(702)).to.eq('DCCII');
+      expect(RomanNumerals.convert(839)).to.eq('DCCCXXXIX');
+      expect(RomanNumerals.convert(918)).to.eq('CMXVIII');
     });
   });
 
